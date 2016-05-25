@@ -5,6 +5,7 @@ build:
 
   ci:
     - echo "hello"
+    - ls -la
     - ./test.sh
 
 integrations:
