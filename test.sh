@@ -17,6 +17,8 @@ do
 		pushd /home/kashish/Desktop/SampleNodeJS_TwoApps/"$word1"/	
 		echo "------------"
 		docker build -t kashishgrover/${word1,,}build:latest .
+		docker commit $SHIPPABLE_CONTAINER_NAME kashishgrover/${word1,,}build
+		docker push kashishgrover/${word1,,}build:latest
 		echo "------------"
 		popd
 		echo "**************************************************************"

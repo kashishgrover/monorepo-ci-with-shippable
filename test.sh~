@@ -3,7 +3,7 @@
 #read com1
 #read com2
 #readarray -t array <<< "$(git diff --name-only $com1 $com2)"
-readarray -t array <<< "$(git diff --name-only SHIPPABLE_COMMIT_RANGE )"
+readarray -t array <<< "$(git diff --name-only SHIPPABLE_COMMIT_RANGE COMMIT)"
 
 printf -- "%s\n" "${array[@]}"
 
@@ -17,6 +17,8 @@ do
 		pushd /home/kashish/Desktop/SampleNodeJS_TwoApps/"$word1"/	
 		echo "------------"
 		docker build -t kashishgrover/${word1,,}build:latest .
+		docker commit $SHIPPABLE_CONTAINER_NAME kashishgrover/${word1,,}build
+		
 		echo "------------"
 		popd
 		echo "**************************************************************"
