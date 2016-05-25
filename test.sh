@@ -1,3 +1,4 @@
+#!/bin/bash
 #finding the list of folders that have changed with two given commit id's 
 
 #read com1
