@@ -13,7 +13,7 @@ build:
   # options: 
 
   ci:
-    - echo "hello from the other side!"
+    - echo "hello from the other side! I must have called a thousand times! :o"
 
   
   post_ci:
