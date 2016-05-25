@@ -6,12 +6,9 @@
 readarray -t array <<< "$(git diff --name-only $SHIPPABLE_COMMIT_RANGE $COMMIT)"
 echo "Hello"
 
-printf -- "%s\n" "${array[@]}"
-echo "Hello"
-
 for each in "${array[@]}"
 do
-	word1=$(IFS="/" ; set -- $each ; echo $1)
+	word1=$(echo "$each" | cut -d "/" -f2)
 	echo $word1
 	if [ -d "$word1" ] 
 	then 
@@ -26,3 +23,4 @@ do
 		echo "**************************************************************"
 	fi
 done
+echo "Hello"
