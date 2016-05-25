@@ -7,6 +7,7 @@ readarray -t array <<< "$(git diff --name-only $SHIPPABLE_COMMIT_RANGE $COMMIT)"
 echo "Hello"
 
 printf -- "%s\n" "${array[@]}"
+echo "Hello"
 
 for each in "${array[@]}"
 do
