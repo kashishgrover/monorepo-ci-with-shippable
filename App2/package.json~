@@ -1,0 +1,9 @@
+{
+  "name": "SampleNodeJSApp2",
+  "version": "0.0.0",
+  "description": "sample node app2",
+  "main": "asdf.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

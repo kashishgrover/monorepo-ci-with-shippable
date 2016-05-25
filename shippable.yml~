@@ -1,0 +1,29 @@
+language: none
+
+#for docker
+build:
+  pre_ci:
+    - docker build -t kashishgrover/node-web-app-1:latest .
+    - docker build -t kashishgrover/
+
+  pre_ci_boot:
+    image_name: kashishgrover/node-web-app-1
+    image_tag: latest
+    pull: false
+  # options: 
+
+  ci:
+    - echo "hello"
+
+  
+  post_ci:
+    - docker commit $SHIPPABLE_CONTAINER_NAME kashishgrover/node-web-app-1
+    - docker push kashishgrover/node-web-app-1:latest
+
+integrations:
+  hub:
+    - integrationName: Kashish-Docker
+      type: docker
+      branches:
+        only:
+          - master
