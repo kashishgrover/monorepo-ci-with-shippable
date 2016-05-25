@@ -7,7 +7,7 @@ build:
     - echo "hello"
     - readarray -t array <<< "$(git diff --name-only $SHIPPABLE_COMMIT_RANGE $COMMIT)"
     - echo "Hello"
-    - for each in "${array[@]}"
+    - for each in "${array[@]}" \
     - do
     - word1=$(echo "$each" | cut -d "/" -f2)
     - echo $word1
