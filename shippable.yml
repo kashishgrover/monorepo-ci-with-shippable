@@ -9,10 +9,10 @@ build:
     - echo "Hello"
     - for each in "${array[@]}"
     - do
-	  - word1=$(echo "$each" | cut -d "/" -f2)
-	  - echo $word1
-	  - if [ -d "$word1" ] 
-	  - then 
+	  word1=$(echo "$each" | cut -d "/" -f2)
+	  echo $word1
+	  if [ -d "$word1" ] 
+	  then 
 		- echo "**************************************************************"
 		- pushd /home/kashish/Desktop/SampleNodeJS_TwoApps/"$word1"/	
 		- echo "------------"
