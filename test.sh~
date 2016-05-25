@@ -5,4 +5,4 @@ read com2
 
 readarray -t array <<< "$(git diff --name-only $com1 $com2)"
 
-printf -- "%s\n" "$(dirname $array[@])"
+printf -- "%s\n" "{$array[@]}"
