@@ -9,10 +9,15 @@ printf -- "%s\n" "${array[@]}"
 
 for each in "${array[@]}"
 do
-	if [ -d "$each" ] 
+	word1=$(IFS="/" ; set -- $each ; echo $1)
+	echo $word1
+	if [ -d "$word1" ] 
 	then 
-		pushd /home/kashish/Desktop/SampleNodeJS_TwoApps/"$each"/	
-		docker build -t kashishgrover/${each,,}build:latest .
+		echo "**************************************************************"
+		pushd /home/kashish/Desktop/SampleNodeJS_TwoApps/"$word1"/	
+		echo "------------"
+		docker build -t kashishgrover/${word1,,}build:latest .
+		echo "------------"
 		popd
 		echo "**************************************************************"
 	fi
