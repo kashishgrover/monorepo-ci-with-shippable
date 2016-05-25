@@ -12,13 +12,9 @@ do
 	if [ -d "$each" ] 
 	then 
 		echo "Directory!"
-		echo "------"
 		pushd /home/kashish/Desktop/SampleNodeJS_TwoApps/"$each"/	
-		echo "------"	
-		ls
-		echo "------"
-		docker build -t kashishgrover/${each,,}\Build:latest .
-		echo "------"
+		docker build -t kashishgrover/${each,,}build:latest .
 		popd
+		echo "**************************************************************"
 	fi
 done

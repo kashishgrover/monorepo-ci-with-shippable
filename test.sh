@@ -11,14 +11,9 @@ for each in "${array[@]}"
 do
 	if [ -d "$each" ] 
 	then 
-		echo "Directory!"
-		echo "------"
 		pushd /home/kashish/Desktop/SampleNodeJS_TwoApps/"$each"/	
-		echo "------"	
-		ls
-		echo "------"
 		docker build -t kashishgrover/${each,,}build:latest .
-		echo "------"
 		popd
+		echo "**************************************************************"
 	fi
 done
