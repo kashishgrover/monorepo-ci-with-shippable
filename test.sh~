@@ -3,7 +3,7 @@
 #read com1
 #read com2
 #readarray -t array <<< "$(git diff --name-only $com1 $com2)"
-readarray -t array <<< "$(git diff --name-only HEAD HEAD~1)"
+readarray -t array <<< "$(git diff --name-only SHIPPABLE_COMMIT_RANGE )"
 
 printf -- "%s\n" "${array[@]}"
 
