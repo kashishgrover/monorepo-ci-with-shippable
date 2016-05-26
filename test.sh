@@ -4,10 +4,13 @@
 #read com1
 #read com2
 #readarray -t array <<< "$(git diff --name-only $com1 $com2)"
-readarray -t array <<< "$(git diff --name-only HEAD HEAD~5)"
+readarray -t array <<< "$(git diff --name-only COMMIT SHIPPABLE_COMMIT_RANGE)"
 
 printf "Line 10\n"
 printf -- "%s\n" "${array[@]}"
+
+curdir=`pwd`
+echo $curdir
 
 for each in "${array[@]}"
 do
@@ -18,7 +21,7 @@ do
 	if [ -d "$word1" ] 
 	then 
 		echo "**************************************************************"
-		pushd /home/kashish/Desktop/SampleNodeJS_TwoApps/"$word1"/	
+		pushd $curdir/"$word1"/	
 		echo "------------"
 		docker build -t kashishgrover/${word1,,}build:latest .
 		docker commit $SHIPPABLE_CONTAINER_NAME kashishgrover/${word1,,}build
