@@ -14,10 +14,12 @@ printf "Line 10\n"
 printf -- "%s\n" "${array[@]}"
 printf "\n"
 
+i=0
 for each in "${array[@]}"
 do
-	each=$(IFS="/" ; set -- $each ; echo $1)
-	echo $each
+	array[$i]=$(IFS="/" ; set -- $each ; echo $1)
+	echo ${array[$i]}
+	i=`expr $i + 1`
 done
 
 sorted_unique_first_words=$(echo "${array[@]}" | tr ' ' '\n' | sort -u | tr '\n' ' ')
