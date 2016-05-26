@@ -13,15 +13,19 @@ readarray -t array <<< "$(git diff --name-only $COMMIT $COMMITPREV)"
 printf "Line 10\n"
 printf -- "%s\n" "${array[@]}"
 
+for each in "${array[@]}"
+do
+	$each = $(IFS="/" ; set -- $each ; echo $1)
+	echo $each
+done
+
+sorted_unique_first_words=$(echo "${array[@]}" | tr ' ' '\n' | sort -u | tr '\n' ' ')
+
 curdir=`pwd`
 echo $curdir
 
-for each in "${array[@]}"
+for each in "${sorted_unique_first_words[@]}"
 do
-	printf "\nLine 15\n"
-	word1=$(IFS="/" ; set -- $each ; echo $1)
-	echo $word1
-	
 	if [ -d "$word1" ] 
 	then 
 		echo "**************************************************************"
