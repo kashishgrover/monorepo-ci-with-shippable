@@ -15,7 +15,7 @@ printf -- "%s\n" "${array[@]}"
 
 for each in "${array[@]}"
 do
-	$each = $(IFS="/" ; set -- $each ; echo $1)
+	each=$(IFS="/" ; set -- $each ; echo $1)
 	echo $each
 done
 
