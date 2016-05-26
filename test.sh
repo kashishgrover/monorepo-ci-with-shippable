@@ -6,13 +6,13 @@
 #readarray -t array <<< "$(git diff --name-only $com1 $com2)"
 readarray -t array <<< "$(git diff --name-only HEAD HEAD~5)"
 
-printf "Line 10"
+printf "Line 10\n"
 printf -- "%s\n" "${array[@]}"
 
 for each in "${array[@]}"
 do
-	printf "Line 15"
-	word1=$(echo "$each" | cut -d "/" -f2)
+	printf "\nLine 15\n"
+	word1=$(IFS="/" ; set -- $each ; echo $1)
 	echo $word1
 	
 	if [ -d "$word1" ] 
