@@ -6,7 +6,7 @@
 #readarray -t array <<< "$(git diff --name-only $com1 $com2)"
 echo "COMMIT = $COMMIT"
 echo "SHIPPABLE_COMMIT_RANGE = $SHIPPABLE_COMMIT_RANGE"
-COMMITPREV=$(IFS="..." ; set -- $each ; echo $1)
+COMMITPREV=$(IFS="..." ; set -- $SHIPPABLE_COMMIT_RANGE ; echo $1)
 echo "COMMITPREV = $COMMITPREV"
 readarray -t array <<< "$(git diff --name-only $COMMIT $COMMITPREV)"
 
