@@ -27,11 +27,18 @@ do
 		echo "**************************************************************"
 		pushd $curdir/"$word1"/	
 		echo "------------"
-		docker build -t kashishgrover/${word1,,}build:latest .
-		docker commit $SHIPPABLE_CONTAINER_NAME kashishgrover/${word1,,}build
-		docker push kashishgrover/${word1,,}build:latest
+		docker build -t kashishgrover/samplenodejstwoapps/${word1,,}build:latest .
+		docker commit $SHIPPABLE_CONTAINER_NAME kashishgrover/samplenodejstwoapps/${word1,,}build
+		docker push kashishgrover/samplenodejstwoapps/${word1,,}build:latest
 		echo "------------"
 		popd
+		echo "**************************************************************"
+	elif [ -f "$word1" ]
+	then
+		echo "**************************************************************"
+		docker build -t kashishgrover/samplenodejstwoapps:latest .
+		docker commit $SHIPPABLE_CONTAINER_NAME kashishgrover/samplenodejstwoapps
+		docker push kashishgrover/samplenodejstwoapps
 		echo "**************************************************************"
 	fi
 done
