@@ -4,6 +4,8 @@
 #read com1
 #read com2
 #readarray -t array <<< "$(git diff --name-only $com1 $com2)"
+echo "COMMIT = $COMMIT"
+echo "SHIPPABLE_COMMIT_RANGE = $SHIPPABLE_COMMIT_RANGE"
 readarray -t array <<< "$(git diff --name-only $COMMIT $SHIPPABLE_COMMIT_RANGE)"
 
 printf "Line 10\n"
