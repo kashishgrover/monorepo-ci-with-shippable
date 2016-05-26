@@ -23,12 +23,13 @@ do
 done
 
 sorted_unique_first_words=$(echo "${array[@]}" | tr ' ' '\n' | sort -u | tr '\n' ' ')
+IFS=' ' read -a WORD_ARRAY <<< "$sorted_unique_first_words"
 
 printf "\n"
 printf "\n"
-echo "SORTED UNIQUE FIRST WORDS"
+echo "FIRST WORD ARRAY"
 
-for each in "${sorted_unique_first_words[@]}"
+for each in "${WORD_ARRAY[@]}"
 do
 	echo $each
 	echo ""
@@ -37,9 +38,9 @@ done
 curdir=`pwd`
 echo $curdir
 
-for each in "${sorted_unique_first_words[@]}"
+for each in "${WORD_ARRAY[@]}"
 do
-	if [ -d "$each" ]
+	if [ -d $each ]
 	then 
 		echo "*IS A DIRECTORY***********************************************"
 		pushd $curdir/"$each"/	
