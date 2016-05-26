@@ -2,7 +2,7 @@
 ---
 
 Steps:
-  1. Make sure you have an account at [Shippable](app.shippable.com) account.
+  1. Make sure you have an account at [app.shippable.com](app.shippable.com).
   2. Fork this repository and enable it in the **Enable Project** option at [Shippable](app.shippable.com).
   3. Click on the project name and go to the project settings
   4. Look out for a section called **Integrations** and then click on the drop down menu under **Hub Integration** and select **Create Integration**.
