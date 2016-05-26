@@ -12,6 +12,7 @@ readarray -t array <<< "$(git diff --name-only $COMMIT $COMMITPREV)"
 
 printf "Line 10\n"
 printf -- "%s\n" "${array[@]}"
+printf "\n"
 
 for each in "${array[@]}"
 do
@@ -21,6 +22,8 @@ done
 
 sorted_unique_first_words=$(echo "${array[@]}" | tr ' ' '\n' | sort -u | tr '\n' ' ')
 
+printf "\n"
+printf "\n"
 echo "SORTED UNIQUE FIRST WORDS"
 
 for each in "${sorted_unique_first_words[@]}"
@@ -34,8 +37,7 @@ echo $curdir
 
 for each in "${sorted_unique_first_words[@]}"
 do
-	if [ -d "$each" ] 
-	then 
+	if [ -d "$each" ] ; then 
 		echo "**************************************************************"
 		pushd $curdir/"$each"/	
 		echo "------------"
@@ -45,8 +47,7 @@ do
 		echo "------------"
 		popd
 		echo "**************************************************************"
-	elif [ -f "$each" ]
-	then
+	else
 		echo "**************************************************************"
 		docker build -t kashishgrover/samplenodejstwoapps:latest .
 		docker commit $SHIPPABLE_CONTAINER_NAME kashishgrover/samplenodejstwoapps
