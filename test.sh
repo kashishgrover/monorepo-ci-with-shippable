@@ -26,18 +26,18 @@ echo $curdir
 
 for each in "${sorted_unique_first_words[@]}"
 do
-	if [ -d "$word1" ] 
+	if [ -d "$each" ] 
 	then 
 		echo "**************************************************************"
-		pushd $curdir/"$word1"/	
+		pushd $curdir/"$each"/	
 		echo "------------"
-		docker build -t kashishgrover/samplenodejstwoapps/${word1,,}build:latest .
-		docker commit $SHIPPABLE_CONTAINER_NAME kashishgrover/samplenodejstwoapps/${word1,,}build
-		docker push kashishgrover/samplenodejstwoapps/${word1,,}build:latest
+		docker build -t kashishgrover/samplenodejstwoapps/${each,,}build:latest .
+		docker commit $SHIPPABLE_CONTAINER_NAME kashishgrover/samplenodejstwoapps/${each,,}build
+		docker push kashishgrover/samplenodejstwoapps/${each,,}build:latest
 		echo "------------"
 		popd
 		echo "**************************************************************"
-	elif [ -f "$word1" ]
+	elif [ -f "$each" ]
 	then
 		echo "**************************************************************"
 		docker build -t kashishgrover/samplenodejstwoapps:latest .
