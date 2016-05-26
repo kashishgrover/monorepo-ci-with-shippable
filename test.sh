@@ -47,7 +47,7 @@ do
 		echo "------------"
 		docker build -t kashishgrover/samplenodejstwoapps:${each,,}build .
 		docker commit $SHIPPABLE_CONTAINER_NAME kashishgrover/samplenodejstwoapps:${each,,}build
-		docker push kashishgrover/samplenodejstwoapps/${each,,}build:${each,,}build
+		docker push kashishgrover/samplenodejstwoapps:${each,,}build
 		echo "------------"
 		popd
 		echo "**************************************************************"
