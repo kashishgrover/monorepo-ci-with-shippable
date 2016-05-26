@@ -1,2 +1,2 @@
 console.log("This is a test. majgrkvjebwgrkbuwetkbh");
-console.log("Hello");
+console.log("Hold the door!");
