@@ -21,6 +21,14 @@ done
 
 sorted_unique_first_words=$(echo "${array[@]}" | tr ' ' '\n' | sort -u | tr '\n' ' ')
 
+echo "SORTED UNIQUE FIRST WORDS"
+
+for each in "${sorted_unique_first_words[@]}"
+do
+	echo $each
+	echo ""
+done
+
 curdir=`pwd`
 echo $curdir
 
