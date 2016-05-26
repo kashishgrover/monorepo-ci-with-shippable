@@ -37,8 +37,9 @@ echo $curdir
 
 for each in "${sorted_unique_first_words[@]}"
 do
-	if [ -d "$each" ] ; then 
-		echo "**************************************************************"
+	if [ -d "$each" ]
+	then 
+		echo "*IS A DIRECTORY***********************************************"
 		pushd $curdir/"$each"/	
 		echo "------------"
 		docker build -t kashishgrover/samplenodejstwoapps/${each,,}build:latest .
@@ -48,7 +49,7 @@ do
 		popd
 		echo "**************************************************************"
 	else
-		echo "**************************************************************"
+		echo "*IS A FILE****************************************************"
 		docker build -t kashishgrover/samplenodejstwoapps:latest .
 		docker commit $SHIPPABLE_CONTAINER_NAME kashishgrover/samplenodejstwoapps
 		docker push kashishgrover/samplenodejstwoapps
