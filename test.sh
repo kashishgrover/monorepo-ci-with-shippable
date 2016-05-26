@@ -5,12 +5,16 @@
 #read com2
 #readarray -t array <<< "$(git diff --name-only $com1 $com2)"
 readarray -t array <<< "$(git diff --name-only HEAD HEAD~5)"
-echo "Hello"
+
+printf "Line 10"
+printf -- "%s\n" "${array[@]}"
 
 for each in "${array[@]}"
 do
+	printf "Line 15"
 	word1=$(echo "$each" | cut -d "/" -f2)
 	echo $word1
+	
 	if [ -d "$word1" ] 
 	then 
 		echo "**************************************************************"
