@@ -10,6 +10,4 @@ Steps:
   6. Once you have edited the **shippable.yml** file, you will be ready to build the project through Shippable.
   7. The script which runs the Docker build commands here is **test.sh**. You can change the script according to your convenience.
 
-[**Aye-Aye**](http://blog.shippable.com/shippable-rebranded), **captain!**
-
 
