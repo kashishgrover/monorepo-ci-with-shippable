@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Put your image name over here
-export IMAGE_NAME=kashishgrover/monorepotest
+export IMAGE_NAME=kashishgrover/samplenodejstwoapps
 
 detect_changed_files_and_folders() {
   echo "Detecting Changes For This Build"
