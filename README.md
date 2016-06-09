@@ -15,7 +15,7 @@ For more information regarding monorepos, clicke [here](https://developer.atlass
 
 **Consider the following monorepo scenario as an example:**
 
-![enter image description here](https://raw.githubusercontent.com/kashishgrover/monorepo-ci-with-shippable/master/Screenshot%20from%202016-06-09%2017:11:53.png)
+![enter image description here](https://raw.githubusercontent.com/kashishgrover/monorepo-ci-with-shippable/master/Project%20Flowchart.png)
 
 
 
