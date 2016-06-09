@@ -21,13 +21,13 @@ detect_changed_files_and_folders() {
 
 build_and_push_changed_folder() {
   if [ -d $1 ]; then
-    printf "*****%s IS A DIRECTORY*****" "$1"
+    printf "*****%s SHALL BE PUSHED*****\n" "$1"
     curdir=`pwd`
     pushd $curdir/"$1"/
     #${1,,} will convert folder name to lowercase
-    docker build -t $IMAGE_NAME:$BRANCH.${1,,}build .
-    docker commit $SHIPPABLE_CONTAINER_NAME $IMAGE_NAME:$BRANCH.${1,,}build
-    docker push $IMAGE_NAME:$BRANCH.${1,,}build
+    docker build -t $IMAGE_NAME:$BRANCH.${1,,}build.$SHIPPABLE_BUILD_NUMBER .
+    docker commit $SHIPPABLE_CONTAINER_NAME $IMAGE_NAME:$BRANCH.${1,,}build.$SHIPPABLE_BUILD_NUMBER
+    docker push $IMAGE_NAME:$BRANCH.${1,,}build.$SHIPPABLE_BUILD_NUMBER
     popd
   fi
 }
