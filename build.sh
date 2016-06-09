@@ -57,7 +57,7 @@ tag_and_push_image() {
 
 
 if [ "$IS_PULL_REQUEST" != true ]; then
-  detect_changed_languages
+  detect_changed_files_and_folders
   tag_and_push_changed_components
 else
   echo "skipping because it's a PR"
