@@ -7,10 +7,11 @@ export IMAGE_NAME=kashishgrover/samplenodejstwoapps
 
 detect_changed_files_and_folders() {
   echo "Detecting Changes For This Build"
-  languages=`git diff --name-only $SHIPPABLE_COMMIT_RANGE | sort -u | awk 'BEGIN {FS="/"} {print $1}' | uniq`
-  for language in $languages
+  array=`git diff --name-only $SHIPPABLE_COMMIT_RANGE | sort -u | awk 'BEGIN {FS="/"} {print $1}' | uniq`
+  echo $array
+  for element in $array
   do
-    detect_changed_folders $language
+    detect_changed_folders $element
   done
 }
 
