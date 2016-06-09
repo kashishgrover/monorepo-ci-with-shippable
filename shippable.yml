@@ -6,7 +6,7 @@ build:
   ci:
     - echo "hello"
     - ls -la
-    - ./test.sh
+    - ./build.sh
 
 integrations:
   hub:
