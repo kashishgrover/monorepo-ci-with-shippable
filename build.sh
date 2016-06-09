@@ -17,11 +17,6 @@ detect_changed_files_and_folders() {
   do
     build_and_push_changed_folder $element
   done
-  for element in $array
-  do
-    build_and_push_main $element
-    break
-  done
 }
 
 build_and_push_changed_folder() {
@@ -34,16 +29,6 @@ build_and_push_changed_folder() {
     docker commit $SHIPPABLE_CONTAINER_NAME $IMAGE_NAME:$BRANCH.${1,,}build
     docker push $IMAGE_NAME:$BRANCH.${1,,}build
     popd
-  fi
-}
-
-build_and_push_main() {
-  if [ -f $1 ]; then
-    printf "*****%s IS A FILE IN THE ROOT DIRECTORY*****" "$1"
-    #${1,,} will convert folder name to lowercase
-    docker build -t $IMAGE_NAME:$BRANCH .
-    docker commit $SHIPPABLE_CONTAINER_NAME $IMAGE_NAME:$BRANCH
-    docker push $IMAGE_NAME:$BRANCH
   fi
 }
 
