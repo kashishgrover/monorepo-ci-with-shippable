@@ -4,8 +4,7 @@ language: none
 build:
 
   ci:
-    - echo "hello"
-    - ls -la
+    - echo "The Magic Happens Here"
     - ./build.sh
 
 integrations:
