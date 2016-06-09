@@ -63,9 +63,9 @@ do
 		echo "**************************************************************"
 	else
 		echo "*IS A FILE****************************************************"
-		docker build -t $IMAGE_NAME:latest .
-		docker commit $SHIPPABLE_CONTAINER_NAME $IMAGE_NAME
-		docker push $IMAGE_NAME
+		docker build -t $IMAGE_NAME:$BRANCH .
+		docker commit $SHIPPABLE_CONTAINER_NAME $IMAGE_NAME:$BRANCH
+		docker push $IMAGE_NAME:$BRANCH
 		echo "**************************************************************"
 	fi
 done
