@@ -4,7 +4,7 @@
 echo "COMMIT = $COMMIT"
 
 #Put your image name over here
-export IMAGE_NAME=kashish/samplenodejstwoapps
+export IMAGE_NAME=kashishgrover/samplenodejstwoapps
 
 #Shippable's Environment Variable which gives the range between 
 #the last successful Commit ID and the  current Commit ID
