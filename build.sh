@@ -50,5 +50,5 @@ build_and_push_main() {
 if [ "$IS_PULL_REQUEST" != true ]; then
   detect_changed_files_and_folders
 else
-  echo "skipping because it's not a PR"
+  echo "Skipping because it's a Pull Request"
 fi
