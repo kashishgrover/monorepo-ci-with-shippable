@@ -26,7 +26,7 @@ detect_changed_files_and_folders() {
 
 build_and_push_changed_folder() {
   if [ -d $1 ]; then
-    echo "*THIS IS A DIRECTORY******************************************"
+    echo "*****$1 IS A DIRECTORY*****"
     curdir=`pwd`
     pushd $curdir/"$1"/
     #${1,,} will convert folder name to lowercase
@@ -39,7 +39,7 @@ build_and_push_changed_folder() {
 
 build_and_push_main() {
   if [ -f $1 ]; then
-    echo "*THIS IS A FILE IN THE ROOT DIRECTORY*************************"
+    echo "*****$1 IS A FILE IN THE ROOT DIRECTORY*****"
     #${1,,} will convert folder name to lowercase
     docker build -t $IMAGE_NAME:$BRANCH .
     docker commit $SHIPPABLE_CONTAINER_NAME $IMAGE_NAME:$BRANCH
