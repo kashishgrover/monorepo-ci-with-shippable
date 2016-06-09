@@ -22,9 +22,10 @@ For more information regarding monorepos, clicke [here](https://developer.atlass
 
 
 ###**The Challenge**
-Each monorepo could have its own Dockerfile and shippable.yml file, and each App inside the monorepo will have its own Dockerfile. The challenge here is to make sure that if a change is made in a file within App 1, then Shippable should build, commit and push the repository on DockerHub with respect to App 1 only. 
+Each monorepo will have a shippable.yml file, and each App inside the monorepo will have its own Dockerfile. The challenge here is to make sure that if a change is made in a file within App 1, then Shippable should build, commit and push the repository on DockerHub with respect to App 1 only. 
 Using Environment Variables provided by Shippable, we can write a simple bash script to achieve this goal.
-A bash script which I wrote can be found on my GitHub repository here. The following steps will guide you on how to use it. 
+
+A bash script which I wrote can be found on this GitHub repository. The following steps will guide you on how to use it. 
   1. Make sure you have an account at [app.shippable.com](https://app.shippable.com/).
   2. Fork this repository and enable it in the **Enable Project** option at [Shippable](app.shippable.com).
   3. Click on the project name and go to the project settings
