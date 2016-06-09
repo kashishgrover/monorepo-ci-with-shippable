@@ -39,12 +39,11 @@ build_and_push_changed_folder() {
 
 build_and_push_main() {
   if [ -f $1 ]; then
-    echo "*THIS IS A FILE***********************************************"
+    echo "*THIS IS A FILE IN THE ROOT DIRECTORY*************************"
     #${1,,} will convert folder name to lowercase
     docker build -t $IMAGE_NAME:$BRANCH .
     docker commit $SHIPPABLE_CONTAINER_NAME $IMAGE_NAME:$BRANCH
     docker push $IMAGE_NAME:$BRANCH
-    popd
   fi
 }
 
