@@ -55,17 +55,17 @@ do
 		pushd $curdir/"$each"/	
 		echo "------------"
 		#${each,,} will convert folder name to lowercase
-		sudo docker build -t $IMAGE_NAME:$BRANCH.${each,,}build .
-		sudo docker commit $SHIPPABLE_CONTAINER_NAME $IMAGE_NAME:$BRANCH.${each,,}build
-		sudo docker push $IMAGE_NAME:$BRANCH.${each,,}build
+		docker build -t $IMAGE_NAME:$BRANCH.${each,,}build .
+		docker commit $SHIPPABLE_CONTAINER_NAME $IMAGE_NAME:$BRANCH.${each,,}build
+		docker push $IMAGE_NAME:$BRANCH.${each,,}build
 		echo "------------"
 		popd
 		echo "**************************************************************"
 	else
 		echo "*IS A FILE****************************************************"
-		sudo docker build -t $IMAGE_NAME:latest .
-		sudo docker commit $SHIPPABLE_CONTAINER_NAME $IMAGE_NAME
-		sudo docker push $IMAGE_NAME
+		docker build -t $IMAGE_NAME:latest .
+		docker commit $SHIPPABLE_CONTAINER_NAME $IMAGE_NAME
+		docker push $IMAGE_NAME
 		echo "**************************************************************"
 	fi
 done
