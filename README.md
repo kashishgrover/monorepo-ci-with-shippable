@@ -1,4 +1,4 @@
-#Shippable's CI of multiple apps within a GitHub Repository using a Docker Integration
+#Shippable's CI of GitHub Monorepos using a Docker Integration
 ---
 
 Steps:
