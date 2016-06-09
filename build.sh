@@ -1,10 +1,7 @@
 #!/bin/bash
 
-SHIPPABLE_COMMIT_RANGE=7ce5782c58a8d5496c3fffe6bee11b6a62a035f4...a3f011963671bc3057f2170f6bc16ab9465980e7
-echo $SHIPPABLE_COMMIT_RANGE 
-
 #Put your image name over here
-export IMAGE_NAME=kashishgrover/samplenodejstwoapps
+export IMAGE_NAME=kashishgrover/monorepotest
 
 detect_changed_files_and_folders() {
   echo "Detecting Changes For This Build"
