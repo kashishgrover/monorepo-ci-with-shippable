@@ -1,4 +1,4 @@
-#Shippable's CI of GitHub Monorepos using a Docker Integration
+#Shippable's CI of GitHub [Monorepos](https://developer.atlassian.com/blog/2015/10/monorepos-in-git/) using a Docker Integration
 ---
 
 Steps:
