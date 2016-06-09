@@ -9,7 +9,9 @@ Monorepos, or monolithic repositories, can be defined as follows:
 	 - Number of commits
 	 - Number of branches and/or tags
 	 - Number of files tracked
-	 - Size of content tracked (as measured by looking at the .git directory of the repository)1
+	 - Size of content tracked (as measured by looking at the .git directory of the repository)
+
+For more information regarding monorepos, clicke [here](https://developer.atlassian.com/blog/2015/10/monorepos-in-git/).
 
 **Consider the following monorepo scenario as an example:**
 
