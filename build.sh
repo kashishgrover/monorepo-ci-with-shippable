@@ -19,7 +19,7 @@ detect_changed_files_and_folders() {
   done
   for element in $array
   do
-    build_and_push_main
+    build_and_push_main $element
     break
   done
 }
