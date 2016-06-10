@@ -14,9 +14,8 @@ Monorepos, or monolithic repositories, can be defined as follows:
 For more information regarding monorepos, click [here](https://developer.atlassian.com/blog/2015/10/monorepos-in-git/).
 
 **Consider the following monorepo scenario as an example:**
-
+<center>
 ![Monorepo flowchart](https://raw.githubusercontent.com/kashishgrover/monorepo-ci-with-shippable/master/Project%20Flowchart.png)
-
 
 
 
@@ -38,6 +37,8 @@ A bash script which I wrote can be found on this GitHub repository. The followin
 Once the script **build.sh** is executed, it compares two Shippable commits - the current commit and the last successful commit. It then saves all the files that were edited/added in an array. Now if the file belonged to a subdirectory of the project, i.e. a monorepo, the script will send commands to build, commit and push the image with respect to the monorepo. So this means that if you did any change in App2, only an image with respect to App2 will be created on Docker hub.
 By using Shippable's environment variables, we can make sure that every image being created has an appropriate tag. 
 
+
 ![Monorepos on DockerHub](https://raw.githubusercontent.com/kashishgrover/monorepo-ci-with-shippable/master/DockerHub%20Monorepos.png)
+Monorepos on DockerHub
 
 
