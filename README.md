@@ -15,7 +15,7 @@ For more information regarding monorepos, click [here](https://developer.atlassi
 
 **Consider the following monorepo scenario as an example:**
 
-![enter image description here](https://raw.githubusercontent.com/kashishgrover/monorepo-ci-with-shippable/master/Project%20Flowchart.png)
+![Monorepo flowchart](https://raw.githubusercontent.com/kashishgrover/monorepo-ci-with-shippable/master/Project%20Flowchart.png)
 
 
 
@@ -33,3 +33,11 @@ A bash script which I wrote can be found on this GitHub repository. The followin
   5. Create a **Docker Integration** by giving your credentials and save it. The details of this integration have been mentioned in **shippable.yml** file and you will have to edit these with respect to your Docker Integration before you build the project through Shippable. Click [here](http://docs.shippable.com/ci_configure/) to get a detailed description of this yml file.
   6. Once you have edited the **shippable.yml** file, you will be ready to build the project through Shippable.
   7. The script which runs the Docker build commands here is **build.sh**. You can change the script according to your convenience.
+
+###**How it works**
+Once the script **build.sh** is executed, it compares two Shippable commits - the current commit and the last successful commit. It then saves all the files that were edited/added in an array. Now if the file belonged to a subdirectory of the project, i.e. a monorepo, the script will send commands to build, commit and push the image with respect to the monorepo. So this means that if you did any change in App2, only an image with respect to App2 will be created on Docker hub.
+By using Shippable's environment variables, we can make sure that every image being created has an appropriate tag. 
+
+![Monorepos on DockerHub](https://raw.githubusercontent.com/kashishgrover/monorepo-ci-with-shippable/master/DockerHub%20Monorepos.png)
+
+
