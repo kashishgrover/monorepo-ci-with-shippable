@@ -14,7 +14,8 @@ Monorepos, or monolithic repositories, can be defined as follows:
 For more information regarding monorepos, click [here](https://developer.atlassian.com/blog/2015/10/monorepos-in-git/).
 
 **Consider the following monorepo scenario as an example:**
-<center>
+
+>
 ![Monorepo flowchart](https://raw.githubusercontent.com/kashishgrover/monorepo-ci-with-shippable/master/Project%20Flowchart.png)
 
 
