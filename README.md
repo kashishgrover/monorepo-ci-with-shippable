@@ -1,6 +1,6 @@
-#**Shippable's CI of GitHub Monorepos with DockerHub**
+# **Shippable's CI of GitHub Monorepos with DockerHub**
 
-###**Monorepos**
+### **Monorepos**
 Monorepos, or monolithic repositories, can be defined as follows:
 
  - The repository contains more than one logical project (e.g. an iOS client and a web-application)
@@ -21,7 +21,7 @@ For more information regarding monorepos, click [here](https://developer.atlassi
 
 
 
-###**The Challenge**
+### **The Challenge**
 Each monorepo will have a shippable.yml file, and each App inside the monorepo will have its own Dockerfile. The challenge here is to make sure that if a change is made in a file within App 1, then Shippable should build, commit and push the repository on DockerHub with respect to App 1 only. 
 Using Environment Variables provided by Shippable, we can write a simple bash script to achieve this goal.
 
@@ -34,7 +34,7 @@ A bash script which I wrote can be found on this GitHub repository. The followin
   6. Once you have edited the **shippable.yml** file, you will be ready to build the project through Shippable.
   7. The script which runs the Docker build commands here is **build.sh**. You can change the script according to your convenience.
 
-###**How it works**
+### **How it works**
 Once the script **build.sh** is executed, it compares two Shippable commits - the current commit and the last successful commit. It then saves all the files that were edited/added in an array. Now if the file belonged to a subdirectory of the project, i.e. a monorepo, the script will send commands to build, commit and push the image with respect to the monorepo. So this means that if you did any change in App2, only an image with respect to App2 will be created on Docker hub.
 By using Shippable's environment variables, we can make sure that every image being created has an appropriate tag. 
 
